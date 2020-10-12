@@ -7,8 +7,8 @@ import pandas as pd
 import pymongo as pymongo
 
 df = pd.read_csv(r'./DATAQUIZ.csv')
-Central = pymongo.MongoClient("mongodb+srv://m001-student:testtest@testcluster.yhrmt.mongodb.net/myDatabase?retryWrites=true&w=majority")
-Local = pymongo.MongoClient("mongodb+srv://fares:test@cluster0.csscd.gcp.mongodb.net/LocalDB?retryWrites=true&w=majority")
+Central = pymongo.MongoClient("central_db_link")
+Local = pymongo.MongoClient("local_db_link")
 dbCentral = Central.myDatabase
 dbLocal = Local.LocalDB
 a = list(dbCentral.Client.find({}, {'_id.ObjectId': 1}))
